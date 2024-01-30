@@ -2,6 +2,7 @@ package tester
 
 import (
 	"fmt"
+	"io"
 	"net/http"
 	"time"
 )
@@ -17,16 +18,33 @@ func TestMirrorSpeed(url string) (float64, error) {
 	}
 	defer resp.Body.Close()
 
-	// 计算下载时间
-	downloadTime := time.Since(startTime)
-
-	// 计算下载速度（MB/s）
-	downloadSpeed := float64(resp.ContentLength) / (1024 * 1024) / downloadTime.Seconds()
-
 	// 检查响应状态
 	if resp.StatusCode != http.StatusOK {
 		return 0, fmt.Errorf("HTTP请求失败，状态码：%d", resp.StatusCode)
 	}
+
+	// 文件大小为3MB，使用3MB的缓冲区
+	bufferSize := 3 * 1024 * 1024
+	buffer := make([]byte, bufferSize)
+
+	// 使用缓冲区，用downloadedBytes累积已下载的字节数n
+	var downloadedBytes int64
+	for {
+		n, err := resp.Body.Read(buffer)
+		if err == io.EOF {
+			break
+		} else if err != nil {
+			return 0, fmt.Errorf("读取响应体失败：%v", err)
+		}
+		//累积操作
+		downloadedBytes += int64(n)
+	}
+
+	// 计算下载时间
+	downloadTime := time.Since(startTime)
+
+	// 计算下载速度（MB/s）
+	downloadSpeed := float64(downloadedBytes) / (1024 * 1024) / downloadTime.Seconds()
 
 	return downloadSpeed, nil
 }
