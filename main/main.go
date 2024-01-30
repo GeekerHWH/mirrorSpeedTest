@@ -10,14 +10,16 @@ import (
 )
 
 func main() {
+	// 调用cfginput.ReadFile()函数读取配置文件，并将其转换为切片
 	Mirrors := cfginput.ReadFile("urls.json")
+	mirrorNames := []string{}
 	mirrorURLs := []string{}
-	for _, url := range Mirrors {
+	for name, url := range Mirrors {
+		mirrorNames = append(mirrorNames, name)
 		mirrorURLs = append(mirrorURLs, url)
 		// fmt.Println(name, url)
 	}
 
-	// 用户开始
 	fmt.Println("欢迎使用镜像测速工具")
 	fmt.Println("1. 批量自定义镜像站URL. 2. 批量选择库中镜像站. 3. Exit")
 
@@ -28,7 +30,8 @@ func main() {
 
 	case 1:
 		reader := bufio.NewReader(os.Stdin)
-		fmt.Print("请输入要测试的镜像站的 URL后回车: (Default:Tsinghua&Aliyun)\n")
+		fmt.Print("请输入要测试的镜像站的 URL: (Default:Tsinghua)\n")
+
 		// 读取用户批量输入的镜像站URL，并append到mirrorURLs切片中
 		for {
 			input, _ := reader.ReadString('\n')
@@ -50,14 +53,26 @@ func main() {
 	}
 
 	// 执行测试
-	for i := range mirrorURLs {
-		downloadSpeed, err := tester.TestMirrorSpeed(mirrorURLs[i])
+	if len(mirrorURLs) == 4 {
+		downloadSpeed, err := tester.TestMirrorSpeed(mirrorURLs[1])
 
 		// 处理测试结果
 		if err != nil {
 			fmt.Printf("测试失败：%s\n", err)
 		} else {
-			fmt.Printf("从 %s 下载 Debian Release 文件的速度：%f MB/s\n", mirrorURLs[i], downloadSpeed)
+			fmt.Printf("从 %s 下载 Debian Release 文件的速度：%f MB/s\n", mirrorNames[1], downloadSpeed)
+		}
+	} else {
+		for i := len(mirrorNames); i < len(mirrorURLs); i++ {
+			downloadSpeed, err := tester.TestMirrorSpeed(mirrorURLs[i])
+
+			// 处理测试结果
+			if err != nil {
+				fmt.Printf("测试失败：%s\n", err)
+			} else {
+				fmt.Printf("从 %s 下载 Debian Release 文件的速度：%f MB/s\n", mirrorURLs[i], downloadSpeed)
+			}
 		}
 	}
+
 }

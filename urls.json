@@ -1,4 +1,6 @@
 {
-    "Tsinghua-Debian": "https://mirrors.tuna.tsinghua.edu.cn/debian",
-    "Aliyun": "https://mirrors.aliyun.com/debian/"
+    "cn.Debian.org": "http://ftp.cn.debian.org/debian/",
+    "Tsinghua": "https://mirrors.tuna.tsinghua.edu.cn/debian",
+    "Aliyun": "https://mirrors.aliyun.com/debian/",
+    "NanjingUni": "https://mirror.nju.edu.cn/debian/"
 }
