@@ -1,4 +1,4 @@
-package main
+package tester
 
 import (
 	"fmt"
@@ -6,15 +6,12 @@ import (
 	"time"
 )
 
-// mirrorURL 是要测试的 TUNA Debian 镜像站的 URL
-const mirrorURL = "https://mirrors.tuna.tsinghua.edu.cn/debian"
-
 // 测试函数，返回从指定镜像站下载 Debian Release 文件的下载速度（MB/s）
-func testMirrorSpeed() (float64, error) {
+func TestMirrorSpeed(url string) (float64, error) {
 	startTime := time.Now()
 
 	// 发起 HTTP 请求，下载 Debian ChangeLog 文件
-	resp, err := http.Get(fmt.Sprintf("%s/dists/stable/ChangeLog", mirrorURL))
+	resp, err := http.Get(fmt.Sprintf("%s/dists/stable/ChangeLog", url))
 	if err != nil {
 		return 0, err
 	}
@@ -32,16 +29,4 @@ func testMirrorSpeed() (float64, error) {
 	}
 
 	return downloadSpeed, nil
-}
-
-func main() {
-	// 执行测试
-	downloadSpeed, err := testMirrorSpeed()
-
-	// 处理测试结果
-	if err != nil {
-		fmt.Printf("测试失败：%s\n", err)
-	} else {
-		fmt.Printf("从 %s 下载 Debian Release 文件的速度：%f MB/s\n", mirrorURL, downloadSpeed)
-	}
 }
