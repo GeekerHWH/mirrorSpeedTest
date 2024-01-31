@@ -1,4 +1,4 @@
-package cfginput
+package task
 
 import (
 	"encoding/json"
@@ -7,11 +7,11 @@ import (
 )
 
 type Config struct {
-	Name string
-	URL  string
+	Name []string
+	URL  []string
 }
 
-func ReadFile(path string) []Config {
+func ReadFile(path string) ([]string, []string) {
 	// 打开json配置文件
 	file, err := os.Open(path)
 	if err != nil {
@@ -20,7 +20,7 @@ func ReadFile(path string) []Config {
 	defer file.Close()
 
 	// 解码json配置文件到Mirrors中
-	var Mirrors []Config
+	var Mirrors Config
 
 	decoder := json.NewDecoder(file)
 	err = decoder.Decode(&Mirrors)
@@ -28,5 +28,5 @@ func ReadFile(path string) []Config {
 		fmt.Println("解码失败:", err)
 	}
 
-	return Mirrors
+	return Mirrors.Name, Mirrors.URL
 }

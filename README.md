@@ -8,11 +8,11 @@ If you have any suggestion or bug problem feel free to address an issue:)
 
 # What's next
 - [x] solved contentLength = -1 problem so that the speed won't be negative
-- [x] fixed a bug that cause tool crash
 - [x] input multiple URLs to test speeds
 - [x] added changeMirror.sh to change the mirror supported by default
 - [x] modulize speed test code
 - [x] multi choose mirrors to test
+- [x] simplized code in main.go for readability
 - [ ] support choose all in multi choice mode
 - [ ] write a chinese README.md
 - [ ] support English Comments

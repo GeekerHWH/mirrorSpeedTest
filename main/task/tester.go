@@ -1,4 +1,4 @@
-package tester
+package task
 
 import (
 	"fmt"

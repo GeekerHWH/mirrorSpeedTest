@@ -1,18 +1,14 @@
-[
-    {
-        "Name": "cn.Debian.org",
-        "URL": "http://ftp.cn.debian.org/debian/"
-    },
-    {
-        "Name": "Tsinghua",
-        "URL": "https://mirrors.tuna.tsinghua.edu.cn/debian"
-    },
-    {
-        "Name": "Aliyun",
-        "URL": "https://mirrors.aliyun.com/debian/"
-    },
-    {
-        "Name": "NanjingUni",
-        "URL": "https://mirror.nju.edu.cn/debian/"
-    }
-]
+{
+    "Name": [
+        "cn.Debian.org",
+        "Tsinghua",
+        "Aliyun",
+        "NanjingUni"
+    ],
+    "URL": [
+        "http://ftp.cn.debian.org/debian/",
+        "https://mirrors.tuna.tsinghua.edu.cn/debian",
+        "https://mirrors.aliyun.com/debian/",
+        "https://mirror.nju.edu.cn/debian/"
+    ]
+}

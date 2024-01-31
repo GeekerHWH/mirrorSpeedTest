@@ -3,8 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"mirrorsTestTools/main/cfginput"
-	"mirrorsTestTools/main/tester"
+	"mirrorsTestTools/main/task"
 	"os"
 	"strconv"
 	"strings"
@@ -12,14 +11,8 @@ import (
 
 func main() {
 	// 调用cfginput.ReadFile()函数读取配置文件，并将其转换为切片
-	Mirrors := cfginput.ReadFile("urls.json")
-	mirrorNames := []string{}
-	mirrorURLs := []string{}
-	for i := range Mirrors {
-		mirrorNames = append(mirrorNames, Mirrors[i].Name)
-		mirrorURLs = append(mirrorURLs, Mirrors[i].URL)
-		// fmt.Println(Mirrors[i].Name, Mirrors[i].URL)
-	}
+	mirrorNames, mirrorURLs := task.ReadFile("urls.json")
+	fmt.Println(mirrorNames, mirrorURLs)
 
 	fmt.Println("欢迎使用镜像测速工具")
 	fmt.Println("1. 批量自定义镜像站URL. 2. 批量选择库中镜像站. 3. Exit")
@@ -45,7 +38,7 @@ func main() {
 		}
 
 		// 执行测试
-		tester.Test(mirrorNames, mirrorURLs)
+		task.Test(mirrorNames, mirrorURLs)
 
 	case 2:
 		fmt.Println("请选择要测试的镜像站(中间用空格隔开):")
@@ -78,7 +71,7 @@ func main() {
 		}
 
 		// 执行测试
-		tester.Test(mirrorNames, mirrorURLs)
+		task.Test(mirrorNames, mirrorURLs)
 
 	case 3:
 		return
