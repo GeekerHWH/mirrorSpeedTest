@@ -45,27 +45,7 @@ func main() {
 		}
 
 		// 执行测试
-		if len(mirrorURLs) == 4 {
-			downloadSpeed, err := tester.TestMirrorSpeed(mirrorURLs[1])
-
-			// 处理测试结果
-			if err != nil {
-				fmt.Printf("测试失败：%s\n", err)
-			} else {
-				fmt.Printf("从 %s 下载 Debian Release 文件的速度：%f MB/s\n", mirrorNames[1], downloadSpeed)
-			}
-		} else {
-			for i := len(mirrorNames); i < len(mirrorURLs); i++ {
-				downloadSpeed, err := tester.TestMirrorSpeed(mirrorURLs[i])
-
-				// 处理测试结果
-				if err != nil {
-					fmt.Printf("测试失败：%s\n", err)
-				} else {
-					fmt.Printf("从 %s 下载 Debian Release 文件的速度：%f MB/s\n", mirrorURLs[i], downloadSpeed)
-				}
-			}
-		}
+		tester.Test(mirrorNames, mirrorURLs)
 
 	case 2:
 		fmt.Println("请选择要测试的镜像站(中间用空格隔开)：")
@@ -98,27 +78,7 @@ func main() {
 		}
 
 		// 执行测试
-		if len(mirrorURLs) == 4 {
-			downloadSpeed, err := tester.TestMirrorSpeed(mirrorURLs[1])
-
-			// 处理测试结果
-			if err != nil {
-				fmt.Printf("测试失败：%s\n", err)
-			} else {
-				fmt.Printf("从 %s 下载 Debian Release 文件的速度：%f MB/s\n", mirrorNames[1], downloadSpeed)
-			}
-		} else {
-			for i := len(mirrorNames); i < len(mirrorURLs); i++ {
-				downloadSpeed, err := tester.TestMirrorSpeed(mirrorURLs[i])
-
-				// 处理测试结果
-				if err != nil {
-					fmt.Printf("测试失败：%s\n", err)
-				} else {
-					fmt.Printf("从 %s 下载 Debian Release 文件的速度：%f MB/s\n", mirrorURLs[i], downloadSpeed)
-				}
-			}
-		}
+		tester.Test(mirrorNames, mirrorURLs)
 
 	case 3:
 		return

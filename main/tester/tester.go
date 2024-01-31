@@ -7,6 +7,30 @@ import (
 	"time"
 )
 
+func Test(mirrorNames []string, mirrorURLs []string) {
+	if len(mirrorURLs) == 4 {
+		downloadSpeed, err := TestMirrorSpeed(mirrorURLs[1])
+
+		// 处理测试结果
+		if err != nil {
+			fmt.Printf("测试失败：%s\n", err)
+		} else {
+			fmt.Printf("从 %s 下载 Debian Release 文件的速度：%f MB/s\n", mirrorNames[1], downloadSpeed)
+		}
+	} else {
+		for i := len(mirrorNames); i < len(mirrorURLs); i++ {
+			downloadSpeed, err := TestMirrorSpeed(mirrorURLs[i])
+
+			// 处理测试结果
+			if err != nil {
+				fmt.Printf("测试失败：%s\n", err)
+			} else {
+				fmt.Printf("从 %s 下载 Debian Release 文件的速度：%f MB/s\n", mirrorURLs[i], downloadSpeed)
+			}
+		}
+	}
+}
+
 // 测试函数，返回从指定镜像站下载 Debian Release 文件的下载速度（MB/s）
 func TestMirrorSpeed(url string) (float64, error) {
 	startTime := time.Now()

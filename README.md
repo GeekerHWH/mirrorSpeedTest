@@ -11,8 +11,11 @@ If you have any suggestion or bug problem feel free to address an issue:)
 - [x] fixed a bug that cause tool crash
 - [x] input multiple URLs to test speeds
 - [x] added changeMirror.sh to change the mirror supported by default
+- [x] modulize speed test code
+- [x] multi choose mirrors to test
+- [ ] write a chinese README.md
 - [ ] support English Comments
-- [ ] multi choose mirrors to test
+- [ ] support English version
 - [ ] check whether the host OS is Debian
 - [ ] support more mirrors
 - [ ] support multi-threads testing in parallel
@@ -20,3 +23,15 @@ If you have any suggestion or bug problem feel free to address an issue:)
 - [ ] support delay testing
 - [ ] support integrated apt sourcelist file editting(default choose the fastest)
 - [ ] beyond my imagination...
+
+# How to use it?
+1. make sure your computer has the Go runtime installed
+```bash
+go env
+```
+2. enter the directory of this project, then open the terminal to run:
+```bash
+go run main/main.go
+```
+3. follow the instruction of the app to get your best mirror(English version 
+coming soon)
