@@ -13,6 +13,7 @@ If you have any suggestion or bug problem feel free to address an issue:)
 - [x] added changeMirror.sh to change the mirror supported by default
 - [x] modulize speed test code
 - [x] multi choose mirrors to test
+- [ ] support choose all in multi choice mode
 - [ ] write a chinese README.md
 - [ ] support English Comments
 - [ ] support English version

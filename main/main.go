@@ -15,10 +15,10 @@ func main() {
 	Mirrors := cfginput.ReadFile("urls.json")
 	mirrorNames := []string{}
 	mirrorURLs := []string{}
-	for name, url := range Mirrors {
-		mirrorNames = append(mirrorNames, name)
-		mirrorURLs = append(mirrorURLs, url)
-		// fmt.Println(name, url)
+	for i := range Mirrors {
+		mirrorNames = append(mirrorNames, Mirrors[i].Name)
+		mirrorURLs = append(mirrorURLs, Mirrors[i].URL)
+		// fmt.Println(Mirrors[i].Name, Mirrors[i].URL)
 	}
 
 	fmt.Println("欢迎使用镜像测速工具")
@@ -37,7 +37,7 @@ func main() {
 		for {
 			input, _ := reader.ReadString('\n')
 			// 移除末尾的换行符
-			input = strings.TrimSpace(input)
+			input = strings.TrimSuffix(input, "\n")
 			if input == "" {
 				break
 			}
@@ -48,7 +48,7 @@ func main() {
 		tester.Test(mirrorNames, mirrorURLs)
 
 	case 2:
-		fmt.Println("请选择要测试的镜像站(中间用空格隔开)：")
+		fmt.Println("请选择要测试的镜像站(中间用空格隔开):")
 		for i, name := range mirrorNames {
 			fmt.Printf("%d. %s\n", i+1, name)
 		}
