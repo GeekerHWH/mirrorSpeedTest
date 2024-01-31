@@ -3,12 +3,14 @@
         "cn.Debian.org",
         "Tsinghua",
         "Aliyun",
-        "NanjingUni"
+        "NanjingUni",
+        "USTC"
     ],
     "URL": [
         "http://ftp.cn.debian.org/debian/",
         "https://mirrors.tuna.tsinghua.edu.cn/debian",
         "https://mirrors.aliyun.com/debian/",
-        "https://mirror.nju.edu.cn/debian/"
+        "https://mirror.nju.edu.cn/debian/",
+        "https://mirrors.ustc.edu.cn/debian/"
     ]
 }

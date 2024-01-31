@@ -12,7 +12,7 @@ import (
 func main() {
 	// 调用cfginput.ReadFile()函数读取配置文件，并将其转换为切片
 	mirrorNames, mirrorURLs := task.ReadFile("urls.json")
-	fmt.Println(mirrorNames, mirrorURLs)
+	// fmt.Println(mirrorNames, mirrorURLs)
 
 	fmt.Println("欢迎使用镜像测速工具")
 	fmt.Println("1. 批量自定义镜像站URL. 2. 批量选择库中镜像站. 3. Exit")

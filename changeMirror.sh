@@ -8,9 +8,12 @@ fi
 
 # User prompt for mirror selection
 echo "Choose a mirror source:"
-echo "1. Tsinghua University mirrors"
-echo "2. Aliyun mirrors"
-read -p "Enter your choice (1 or 2): " choice
+echo "1. cn.Debian.org"
+echo "2. Tsinghua University mirrors"
+echo "3. Aliyun mirrors"
+echo "4. Nanjing University mirrors"
+echo "5. USTC mirrors"
+read -p "Enter your choice (1 to 5): " choice
 
 # Define variables
 sources_list="/etc/apt/sources.list"
@@ -37,16 +40,24 @@ set_mirror_source() {
     # deb-src https://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware
     
     # deb https://deb.debian.org/debian/ bookworm non-free-firmware contrib main non-free" > "$sources_list"
-
 }
 
 # Set the mirror source based on user choice
 case $choice in
     1)
-        set_mirror_source "https://mirrors.tuna.tsinghua.edu.cn/debian/"
+        set_mirror_source "http://ftp.cn.debian.org/debian/"
         ;;
     2)
+        set_mirror_source "https://mirrors.tuna.tsinghua.edu.cn/debian/"
+        ;;
+    3)
         set_mirror_source "https://mirrors.aliyun.com/debian/"
+        ;;
+    4)
+        set_mirror_source "https://mirror.nju.edu.cn/debian/"
+        ;;
+    5)
+        set_mirror_source "https://mirrors.ustc.edu.cn/debian/"
         ;;
     *)
         echo "Invalid choice. Exiting."

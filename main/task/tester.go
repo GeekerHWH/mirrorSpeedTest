@@ -8,7 +8,7 @@ import (
 )
 
 func Test(mirrorNames []string, mirrorURLs []string) {
-	if len(mirrorURLs) == 4 {
+	if len(mirrorURLs) == 5 {
 		downloadSpeed, err := TestMirrorSpeed(mirrorURLs[1])
 
 		// 处理测试结果
