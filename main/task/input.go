@@ -46,10 +46,13 @@ func SelectMirror(mirrorURLs *[]string) {
 			continue
 		}
 		// 检查索引的有效性
-		if i > 0 && i <= len(*mirrorURLs) {
+		if i == 0 {
+			//全选(存在内存优化可能)
+			*mirrorURLs = append(*mirrorURLs, *mirrorURLs...)
+		} else if i > 0 && i <= len(*mirrorURLs) {
 			*mirrorURLs = append(*mirrorURLs, (*mirrorURLs)[i-1])
 		} else {
-			fmt.Println("存在无效的选择，默认测试Tsinghua")
+			fmt.Println("存在无效的选择组合，默认测试Tsinghua")
 		}
 	}
 }

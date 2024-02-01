@@ -27,7 +27,7 @@ func main() {
 		task.Test(mirrorNames, mirrorURLs)
 
 	case 2:
-		fmt.Println("请选择要测试的镜像站(中间用空格隔开):")
+		fmt.Println("请选择要测试的镜像站(中间用空格隔开)，0 表示全选:")
 		for i, name := range mirrorNames {
 			fmt.Printf("%d. %s\n", i+1, name)
 		}

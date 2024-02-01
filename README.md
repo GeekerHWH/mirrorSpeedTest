@@ -17,7 +17,7 @@ If you have any suggestion or bug problem feel free to address an issue:)
 - [x] modulize speed test code
 - [x] multi choose mirrors to test
 - [x] simplized code in main.go for readability
-- [ ] support choose all in multi choice mode
+- [x] support choose all in multi choice mode
 - [ ] write a chinese README.md
 - [ ] support English Comments
 - [ ] support English version
