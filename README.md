@@ -1,4 +1,8 @@
-# A project for Testing debian mirrors
+<div align="center">
+  <a href="README-ZH.md">中文版说明文档戳这</a>
+</div>
+
+# A project for Testing Debian/Ubuntu mirrors
 This tool is mainly to help Debian users to filter the best apt Repo for themselves,
 especially for people who live in China with a special Network Environment.
 
