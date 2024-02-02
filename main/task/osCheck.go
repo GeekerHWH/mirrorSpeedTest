@@ -7,6 +7,18 @@ import (
 	"strings"
 )
 
+func CheckOS() int {
+	if IsDebian12() {
+		return 1
+	} else {
+		if IsUbuntu2204() {
+			return 2
+		} else {
+			return 0
+		}
+	}
+}
+
 func IsDebian12() bool {
 	// 检查操作系统是否为Linux
 	if runtime.GOOS != "linux" {

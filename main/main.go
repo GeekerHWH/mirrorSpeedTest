@@ -6,15 +6,9 @@ import (
 )
 
 func main() {
-	if task.IsDebian12() {
-		fmt.Println("当前操作系统是 Debian 12")
-	} else {
-		fmt.Println("当前操作系统不是 Debian 12")
-	}
-	if task.IsUbuntu2204() {
-		fmt.Println("当前操作系统是 Ubuntu 22.04")
-	} else {
-		fmt.Println("当前操作系统不是 Ubuntu 22.04")
+	if task.CheckOS() == 0 {
+		fmt.Println("您的系统不是Debian 12 or Ubuntu 22.04, 请待支持")
+		return
 	}
 
 	// 调用cfginput.ReadFile()函数读取配置文件，并将其转换为切片
