@@ -6,6 +6,16 @@ import (
 )
 
 func main() {
+	if task.IsDebian12() {
+		fmt.Println("当前操作系统是 Debian 12")
+	} else {
+		fmt.Println("当前操作系统不是 Debian 12")
+	}
+	if task.IsUbuntu2204() {
+		fmt.Println("当前操作系统是 Ubuntu 22.04")
+	} else {
+		fmt.Println("当前操作系统不是 Ubuntu 22.04")
+	}
 	// 调用cfginput.ReadFile()函数读取配置文件，并将其转换为切片
 	mirrorNames, mirrorURLs := task.ReadFile("urls.json")
 	// fmt.Println(mirrorNames, mirrorURLs)

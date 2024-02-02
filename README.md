@@ -18,7 +18,7 @@ If you have any suggestion or bug problem feel free to address an issue:)
 - [x] multi choose mirrors to test
 - [x] simplized code in main.go for readability
 - [x] support choose all in multi choice mode
-- [ ] write a chinese README.md
+- [x] write a chinese README.md
 - [ ] support English Comments
 - [ ] support English version
 - [ ] check whether the host OS is Debian
