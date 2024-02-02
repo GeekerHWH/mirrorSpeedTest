@@ -19,17 +19,19 @@ If you have any suggestion or bug problem feel free to address an issue:)
 - [x] simplized code in main.go for readability
 - [x] support choose all in multi choice mode
 - [x] write a chinese README.md
+- [x] check whether the host OS is Debian
 - [ ] support English Comments
 - [ ] support English version
-- [ ] check whether the host OS is Debian
-- [ ] support more mirrors
+- [ ] support more mirrors(5 China Mirrors supported now)
 - [ ] support multi-threads testing in parallel
 - [ ] support geo-based mirrors testing to present perfect suggestion
 - [ ] support delay testing
 - [ ] support integrated apt sourcelist file editting(default choose the fastest)
+- [ ] containerize the app so that skip install go runtime
 - [ ] beyond my imagination...
 
 # How to use it?
+## to test mirrors' speeds:
 1. make sure your computer has the Go runtime installed
 ```bash
 go env
@@ -40,3 +42,9 @@ go run main/main.go
 ```
 3. follow the instruction of the app to get your best mirror(English version 
 coming soon)
+
+## to change to the best mirror after Testing
+```bash
+# running in root is needed
+sudo ./changeMirror.sh
+```
