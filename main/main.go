@@ -16,6 +16,7 @@ func main() {
 	} else {
 		fmt.Println("当前操作系统不是 Ubuntu 22.04")
 	}
+
 	// 调用cfginput.ReadFile()函数读取配置文件，并将其转换为切片
 	mirrorNames, mirrorURLs := task.ReadFile("urls.json")
 	// fmt.Println(mirrorNames, mirrorURLs)
