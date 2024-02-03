@@ -1,42 +1,5 @@
 #!/bin/bash
 
-# Check if the script is run as root
-if [ "$(id -u)" != "0" ]; then
-   echo "This script must be run as root" 1>&2
-   exit 1
-fi
-
-# Check Debian or Ubuntu version
-if [ -f /etc/os-release ]; then
-    distribution=$(grep "^ID=" /etc/os-release | cut -d= -f2)
-    version=$(grep "^VERSION_ID=" /etc/os-release | cut -d= -f2 | tr -d '"')
-    
-    if [ "$distribution" == "debian" ] && [ "$version" == "12" ]; then
-        echo "Detected Debian 12"
-        choose_debian_mirrors
-
-    elif [ "$distribution" == "ubuntu" ] && [ "$version" == "22.04" ]; then
-        echo "Detected Ubuntu 22.04"
-        choose_ubuntu_mirrors
-    else
-        echo "Unsupported distribution or version. Exiting."
-        exit 1
-    fi
-else
-    echo "Unable to determine distribution version. Exiting."
-    exit 1
-fi
-
-# Update apt
-if sudo apt update && sudo apt upgrade -y; then
-    echo "System update and upgrade successful."
-else
-    echo "Error: System update or upgrade failed."
-    exit 1
-fi
-
-
-
 choose_debian_mirrors(){
     # User prompt for mirror selection
     echo "Choose a mirror source:"
@@ -155,3 +118,41 @@ set_ubuntu_source() {
     deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
     # deb-src http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse" > "$sources_list"
 }
+
+# Check if the script is run as root
+if [ "$(id -u)" != "0" ]; then
+   echo "This script must be run as root" 1>&2
+   exit 1
+fi
+
+# Check Debian or Ubuntu version
+if [ -f /etc/os-release ]; then
+    distribution=$(grep "^ID=" /etc/os-release | cut -d= -f2)
+    version=$(grep "^VERSION_ID=" /etc/os-release | cut -d= -f2 | tr -d '"')
+    
+    if [ "$distribution" == "debian" ] && [ "$version" == "12" ]; then
+        echo "Detected Debian 12"
+        choose_debian_mirrors
+
+    elif [ "$distribution" == "ubuntu" ] && [ "$version" == "22.04" ]; then
+        echo "Detected Ubuntu 22.04"
+        choose_ubuntu_mirrors
+    else
+        echo "Unsupported distribution or version. Exiting."
+        exit 1
+    fi
+else
+    echo "Unable to determine distribution version. Exiting."
+    exit 1
+fi
+
+# Update apt
+if sudo apt update && sudo apt upgrade -y; then
+    echo "System update and upgrade successful."
+else
+    echo "Error: System update or upgrade failed."
+    exit 1
+fi
+
+
+

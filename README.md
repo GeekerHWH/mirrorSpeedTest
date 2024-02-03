@@ -10,6 +10,9 @@ especially for people who live in China with a special Network Environment.
 
 If you have any suggestion or bug problem feel free to address an issue:)
 
+# Demo
+![Chinese version](Demo/2024-02-03.png)
+
 # What's next
 - [x] solved contentLength = -1 problem so that the speed won't be negative
 - [x] input multiple URLs to test speeds
@@ -23,7 +26,7 @@ If you have any suggestion or bug problem feel free to address an issue:)
 - [ ] support English Comments
 - [ ] support English version
 - [ ] support more mirrors(5 China Mirrors supported now)
-- [ ] support multi-threads testing in parallel
+- [x] support multi-threads testing in parallel(check task/tester.go)
 - [ ] support geo-based mirrors testing to present perfect suggestion
 - [ ] support delay testing
 - [ ] support integrated apt sourcelist file editting(default choose the fastest)
