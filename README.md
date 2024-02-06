@@ -14,7 +14,6 @@ If you have any suggestion or bug problem feel free to address an issue:)
 ![Chinese version](Demo/2024-02-03.png)
 
 # What's next
-- [x] solved contentLength = -1 problem so that the speed won't be negative
 - [x] input multiple URLs to test speeds
 - [x] added changeMirror.sh to change the mirror supported by default
 - [x] modulize speed test code
@@ -23,13 +22,14 @@ If you have any suggestion or bug problem feel free to address an issue:)
 - [x] support choose all in multi choice mode
 - [x] write a chinese README.md
 - [x] check whether the host OS is Debian
+- [x] support sorting from best to worst
 - [ ] support English Comments
 - [ ] support English version
 - [ ] support more mirrors(5 China Mirrors supported now)
 - [x] support multi-threads testing in parallel(check task/tester.go)
 - [ ] support geo-based mirrors testing to present perfect suggestion
-- [ ] support delay testing
-- [ ] support multi-threads delay testing in parallel
+- [x] support delay testing
+- [x] support multi-threads delay testing in parallel
 - [ ] support integrated apt sourcelist file editting(default choose the fastest)
 - [ ] containerize the app so that skip install go runtime
 - [ ] beyond my imagination...

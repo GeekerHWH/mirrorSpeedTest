@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-	// task.TCPPing("www.baidu.com")
 
 	if task.CheckOS() == 0 {
 		fmt.Println("您的系统不是Debian 12 or Ubuntu 22.04, 请待支持")

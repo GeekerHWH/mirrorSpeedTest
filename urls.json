@@ -7,10 +7,10 @@
         "USTC"
     ],
     "URL": [
-        "http://ftp.cn.debian.org/debian/",
-        "https://mirrors.tuna.tsinghua.edu.cn/debian",
-        "https://mirrors.aliyun.com/debian/",
-        "https://mirror.nju.edu.cn/debian/",
-        "https://mirrors.ustc.edu.cn/debian/"
+        "ftp.cn.debian.org",
+        "mirrors.tuna.tsinghua.edu.cn",
+        "mirrors.aliyun.com",
+        "mirror.nju.edu.cn",
+        "mirrors.ustc.edu.cn"
     ]
 }
