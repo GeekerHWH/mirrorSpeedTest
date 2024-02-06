@@ -6,11 +6,14 @@ import (
 )
 
 func main() {
+	// task.TCPPing("www.baidu.com")
+
 	if task.CheckOS() == 0 {
 		fmt.Println("您的系统不是Debian 12 or Ubuntu 22.04, 请待支持")
 		return
 	}
 
+	// Use cfginput.ReadFile() to read the configuration file and convert it to a slice.
 	// 调用cfginput.ReadFile()函数读取配置文件，并将其转换为切片
 	mirrorNames, mirrorURLs := task.ReadFile("urls.json")
 	// fmt.Println(mirrorNames, mirrorURLs)
@@ -28,7 +31,6 @@ func main() {
 
 		task.InputURL(&mirrorURLs)
 
-		// 执行测试
 		task.Test(mirrorNames, mirrorURLs)
 
 	case 2:
@@ -39,7 +41,6 @@ func main() {
 
 		task.SelectMirror(&mirrorURLs)
 
-		// 执行测试
 		task.Test(mirrorNames, mirrorURLs)
 
 	case 3:

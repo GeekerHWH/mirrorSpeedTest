@@ -3,6 +3,7 @@ package task
 import (
 	"fmt"
 	"io"
+	"net"
 	"net/http"
 	"sync"
 	"time"
@@ -16,6 +17,7 @@ func Test(mirrorNames []string, mirrorURLs []string) {
 		var waitGroup sync.WaitGroup
 		waitGroup.Add(len(mirrorURLs) - len(mirrorNames))
 
+		// multi-threads speed testing
 		// 多线程测速
 		for i := len(mirrorNames); i < len(mirrorURLs); i++ {
 			go func(url string) {
@@ -27,8 +29,10 @@ func Test(mirrorNames []string, mirrorURLs []string) {
 	}
 }
 
+// Will print the speed of downloading the Debian Release file from the specified mirror.
 // 测试函数，返回从指定镜像站下载 Debian Release 文件的下载速度（MB/s）
 func TestMirrorSpeed(url string) {
+	// Start clocking
 	// 开始计时
 	startTime := time.Now()
 
@@ -76,4 +80,17 @@ func TestMirrorSpeed(url string) {
 	} else {
 		fmt.Printf("从 %s 下载 Debian Release 文件的速度：%f MB/s\n", url, downloadSpeed)
 	}
+}
+
+func TCPPing(url string) {
+	start := time.Now()
+
+	conn, err := net.Dial("tcp", url+":80")
+	if err != nil {
+		fmt.Printf("TCP Ping %s: %s\n", url, err)
+	}
+	defer conn.Close()
+
+	delay := time.Since(start)
+	fmt.Printf("TCP Ping %s: %s\n", url, delay)
 }

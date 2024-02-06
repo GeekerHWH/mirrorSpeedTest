@@ -29,6 +29,7 @@ If you have any suggestion or bug problem feel free to address an issue:)
 - [x] support multi-threads testing in parallel(check task/tester.go)
 - [ ] support geo-based mirrors testing to present perfect suggestion
 - [ ] support delay testing
+- [ ] support multi-threads delay testing in parallel
 - [ ] support integrated apt sourcelist file editting(default choose the fastest)
 - [ ] containerize the app so that skip install go runtime
 - [ ] beyond my imagination...
