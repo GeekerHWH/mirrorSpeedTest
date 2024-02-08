@@ -7,7 +7,7 @@
 如果你有任何的建议或者发现了任何的bug欢迎随时提出issue：）
 
 # 示例
-![Chinese version](Demo/2024-02-03.png)
+![Chinese version](Demo/2024-02-08.png)
 
 # To Do List
 - [x] 解决了contentLength = -1的问题，以防速度为负值

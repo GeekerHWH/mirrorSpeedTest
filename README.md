@@ -11,7 +11,7 @@ especially for people who live in China with a special Network Environment.
 If you have any suggestion or bug problem feel free to address an issue:)
 
 # Demo
-![Chinese version](Demo/2024-02-03.png)
+![Chinese version](Demo/2024-02-08.png)
 
 # What's next
 - [x] input multiple URLs to test speeds
