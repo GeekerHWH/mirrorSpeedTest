@@ -22,7 +22,8 @@ func InputURL(mirrorURLs *[]string) {
 	}
 }
 
-func SelectMirror(mirrorURLs *[]string) {
+// 存在内存优化可能
+func SelectMirror(mirrorNames *[]string, mirrorURLs *[]string) {
 	// 读取用户选择的镜像站序号
 	var index string
 	reader := bufio.NewReader(os.Stdin)
@@ -48,8 +49,10 @@ func SelectMirror(mirrorURLs *[]string) {
 		// 检查索引的有效性
 		if i == 0 {
 			//全选(存在内存优化可能)
+			*mirrorNames = append(*mirrorNames, *mirrorNames...)
 			*mirrorURLs = append(*mirrorURLs, *mirrorURLs...)
 		} else if i > 0 && i <= len(*mirrorURLs) {
+			*mirrorNames = append(*mirrorNames, (*mirrorNames)[i-1])
 			*mirrorURLs = append(*mirrorURLs, (*mirrorURLs)[i-1])
 		} else {
 			fmt.Println("存在无效的选择组合，默认测试Tsinghua")

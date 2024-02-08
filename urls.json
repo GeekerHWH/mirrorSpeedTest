@@ -4,13 +4,15 @@
         "Tsinghua",
         "Aliyun",
         "NanjingUni",
-        "USTC"
+        "USTC",
+        "163"
     ],
     "URL": [
         "ftp.cn.debian.org",
         "mirrors.tuna.tsinghua.edu.cn",
         "mirrors.aliyun.com",
         "mirror.nju.edu.cn",
-        "mirrors.ustc.edu.cn"
+        "mirrors.ustc.edu.cn",
+        "mirrors.163.com"
     ]
 }

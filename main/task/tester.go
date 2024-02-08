@@ -12,6 +12,8 @@ import (
 	"time"
 )
 
+const initNumURLs = 6
+
 type Mirror struct {
 	Name  string
 	URL   string
@@ -20,19 +22,18 @@ type Mirror struct {
 }
 
 func Test(mirrorNames []string, mirrorURLs []string) {
-	if len(mirrorURLs) == 5 {
+	if len(mirrorURLs) == initNumURLs {
 		TestMirrorSpeed(mirrorURLs[1])
 
 	} else {
 		var waitGroup sync.WaitGroup
-		waitGroup.Add(len(mirrorURLs) - len(mirrorNames))
+		waitGroup.Add(len(mirrorURLs) - initNumURLs)
 
 		// multi-threads speed testing
 		// 多线程测速
 		var Mirrors []Mirror
 		var mu sync.Mutex // 用于保护Mirrors切片的互斥锁
-
-		for i := len(mirrorNames); i < len(mirrorURLs); i++ {
+		for i := initNumURLs; i < len(mirrorURLs); i++ {
 			go func(index int, url string) {
 				defer waitGroup.Done()
 
@@ -40,7 +41,7 @@ func Test(mirrorNames []string, mirrorURLs []string) {
 				ping := TCPPing(url)
 
 				mu.Lock()
-				Mirrors = append(Mirrors, Mirror{Name: mirrorNames[len(mirrorURLs)-index], URL: url, Speed: speed, Ping: ping})
+				Mirrors = append(Mirrors, Mirror{Name: mirrorNames[index], URL: url, Speed: speed, Ping: ping})
 				mu.Unlock()
 			}(i, mirrorURLs[i])
 		}
@@ -87,7 +88,7 @@ func TestMirrorSpeed(url string) float64 {
 
 	// 检查响应状态
 	if resp.StatusCode != http.StatusOK {
-		fmt.Printf("HTTP请求失败，状态码：%d", resp.StatusCode)
+		fmt.Printf("%s HTTP请求失败，状态码：%d\n", url, resp.StatusCode)
 		return 0
 	}
 
