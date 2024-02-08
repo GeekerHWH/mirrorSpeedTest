@@ -2,17 +2,25 @@
     "Name": [
         "cn.Debian.org",
         "Tsinghua",
-        "Aliyun",
-        "NanjingUni",
         "USTC",
-        "163"
+        "Aliyun",
+        "CQU",
+        "NJU",
+        "163",
+        "BFSU",
+        "ZJU",
+        "neusoft"
     ],
     "URL": [
         "ftp.cn.debian.org",
         "mirrors.tuna.tsinghua.edu.cn",
-        "mirrors.aliyun.com",
-        "mirror.nju.edu.cn",
         "mirrors.ustc.edu.cn",
-        "mirrors.163.com"
+        "mirrors.aliyun.com",
+        "mirrors.cqu.edu.cn",
+        "mirror.nju.edu.cn",
+        "mirrors.163.com",
+        "mirrors.bfsu.edu.cn",
+        "mirrors.zju.edu.cn",
+        "mirrors.neusoft.edu.cn"
     ]
 }

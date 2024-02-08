@@ -12,7 +12,7 @@ import (
 	"time"
 )
 
-const initNumURLs = 6
+const initNumURLs = 10
 
 type Mirror struct {
 	Name  string

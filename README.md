@@ -25,7 +25,8 @@ If you have any suggestion or bug problem feel free to address an issue:)
 - [x] support sorting from best to worst
 - [ ] support English Comments
 - [ ] support English version
-- [ ] support more mirrors(5 China Mirrors supported now)
+- [x] support more mirrors(10 China Mirrors supported now)
+> Check [[Debian Mirror Lists-ZH]](https://www.debian.org/mirror/list.zh-cn.html)
 - [x] support multi-threads testing in parallel(check task/tester.go)
 - [ ] support geo-based mirrors testing to present perfect suggestion
 - [x] support delay testing

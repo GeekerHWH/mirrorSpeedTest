@@ -22,7 +22,8 @@
 - [x] 支持以速度带宽排序显示
 - [ ] 支持英文注释
 - [ ] 支持英文版本
-- [ ] 支持更多镜像源
+- [x] 支持更多镜像源(已支持中国10大镜像站)
+> 详见 [[Debian中国大陆镜像源]](https://www.debian.org/mirror/list.zh-cn.html)
 - [x] 支持多线程测速（查看main/task/tester.go中Test函数）
 - [x] 支持延迟测试
 - [x] 支持多线程延迟测试
