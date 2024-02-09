@@ -30,12 +30,17 @@
 - [ ] 性能调优
 - [ ] 内存使用调优
 - [ ] 支持基于地域的镜像测试
-- [ ] 支持网络延时测试
+- [x] 应用容器化以迅速使用
 - [ ] 支持内嵌的换源操作
 
 # 如何使用
 ## 如何测试镜像速度
-### Run with the binary file
+### 使用Docker启动
+1. 确保你已经安装了docker后执行该命令即可:
+```bash
+docker run -it geekerhwh/mst:latest
+```
+### 执行二进制文件
 1. 从Release下载mirrorSpeedTest和urls.json(确保在同一文件夹下)
 2. 确保二进制文件有权限被执行
 ```bash

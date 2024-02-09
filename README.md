@@ -35,12 +35,17 @@ If you have any suggestion or bug problem feel free to address an issue:)
 - [x] support delay testing
 - [x] support multi-threads delay testing in parallel
 - [ ] support integrated apt sourcelist file editting(default choose the fastest)
-- [ ] containerize the app so that skip install go runtime
+- [x] containerize the app so that skip install go runtime
 - [ ] beyond my imagination...
 
 # How to use it?
 ## to test mirrors' speeds:
-### Run with the binary file
+### Run with Docker
+1. make sure docker is installed then run:
+```bash
+docker run -it geekerhwh/mst:latest
+```
+### or Run with the binary file
 1. Download the mirrorSpeedTest and urls.json file(make sure files are in the same directory)
 2. make sure the binary file has priviledge to be executed
 ```bash
@@ -50,7 +55,7 @@ chmod 777 ./mirrorSpeedTest
 ```bash
 ./mirrorSpeedTest
 ```
-### if you want to run with go runtime
+### or If you want to run with go runtime
 1. make sure your computer has the Go runtime installed
 ```bash
 go env

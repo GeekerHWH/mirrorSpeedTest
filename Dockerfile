@@ -7,14 +7,8 @@ WORKDIR /app
 # 将本地文件复制到容器中
 COPY . .
 
-# 在容器中执行安装依赖等操作，根据你的项目需要修改
-# RUN go mod download
-
-# 构建你的应用
-# RUN go build -o myapp
-
-# 暴露端口，如果你的应用需要监听端口的话，根据实际情况修改
-# EXPOSE 8080
+# 构建应用
+RUN go build -o mirrorSpeedTest main/main.go
 
 # 定义容器启动时执行的命令
-# CMD ["./myapp"]
+CMD ["./mirrorSpeedTest"]
