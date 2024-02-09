@@ -27,12 +27,25 @@
 - [x] 支持多线程测速（查看main/task/tester.go中Test函数）
 - [x] 支持延迟测试
 - [x] 支持多线程延迟测试
+- [ ] 性能调优
+- [ ] 内存使用调优
 - [ ] 支持基于地域的镜像测试
 - [ ] 支持网络延时测试
 - [ ] 支持内嵌的换源操作
 
 # 如何使用
 ## 如何测试镜像速度
+### Run with the binary file
+1. 从Release下载mirrorSpeedTest和urls.json(确保在同一文件夹下)
+2. 确保二进制文件有权限被执行
+```bash
+chmod 777 ./mirrorSpeedTest
+```
+3. 从终端启动即可
+```bash
+./mirrorSpeedTest
+```
+### 如果你想用go runtime运行
 1. 确保你的电脑安装有Go的运行环境
 ```bash
 go env

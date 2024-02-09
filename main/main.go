@@ -39,7 +39,7 @@ func main() {
 		}
 
 		task.SelectMirror(&mirrorNames, &mirrorURLs)
-		//Something Wrong!!
+
 		task.Test(mirrorNames, mirrorURLs)
 
 	case 3:

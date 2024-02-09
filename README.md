@@ -28,6 +28,9 @@ If you have any suggestion or bug problem feel free to address an issue:)
 - [x] support more mirrors(10 China Mirrors supported now)
 > Check [[Debian Mirror Lists-ZH]](https://www.debian.org/mirror/list.zh-cn.html)
 - [x] support multi-threads testing in parallel(check task/tester.go)
+- [ ] tuning the performance
+- [ ] tuning the RAM usage
+- [ ] support conda and pip mirror testing
 - [ ] support geo-based mirrors testing to present perfect suggestion
 - [x] support delay testing
 - [x] support multi-threads delay testing in parallel
@@ -37,15 +40,26 @@ If you have any suggestion or bug problem feel free to address an issue:)
 
 # How to use it?
 ## to test mirrors' speeds:
+### Run with the binary file
+1. Download the mirrorSpeedTest and urls.json file(make sure files are in the same directory)
+2. make sure the binary file has priviledge to be executed
+```bash
+chmod 777 ./mirrorSpeedTest
+```
+3. run it in terminal
+```bash
+./mirrorSpeedTest
+```
+### if you want to run with go runtime
 1. make sure your computer has the Go runtime installed
 ```bash
 go env
 ```
-2. enter the directory of this project, then open the terminal to run:
+1. enter the directory of this project, then open the terminal to run:
 ```bash
 go run main/main.go
 ```
-3. follow the instruction of the app to get your best mirror(English version 
+1. follow the instruction of the app to get your best mirror(English version 
 coming soon)
 
 ## to change to the best mirror after Testing
