@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func InputURL(mirrorURLs *[]string) {
+func InputURL(mirrorNames *[]string, mirrorURLs *[]string) {
 	// 读取用户批量输入的镜像站URL，并append到mirrorURLs切片中
 	reader := bufio.NewReader(os.Stdin)
 	for {
@@ -18,6 +18,7 @@ func InputURL(mirrorURLs *[]string) {
 		if input == "" {
 			break
 		}
+		*mirrorNames = append(*mirrorNames, input)
 		*mirrorURLs = append(*mirrorURLs, input)
 	}
 }

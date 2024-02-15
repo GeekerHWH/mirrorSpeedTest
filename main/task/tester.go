@@ -12,8 +12,6 @@ import (
 	"time"
 )
 
-const initNumURLs = 10
-
 type Mirror struct {
 	Name  string
 	URL   string
@@ -21,7 +19,7 @@ type Mirror struct {
 	Ping  time.Duration
 }
 
-func Test(mirrorNames []string, mirrorURLs []string) {
+func Test(mirrorNames []string, mirrorURLs []string, initNumURLs int) {
 	if len(mirrorURLs) == initNumURLs {
 		TestMirrorSpeed(mirrorURLs[1])
 

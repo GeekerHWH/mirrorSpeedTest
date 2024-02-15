@@ -2,6 +2,7 @@ package task
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"runtime"
 	"strings"
@@ -14,6 +15,7 @@ func CheckOS() int {
 		if IsUbuntu2204() {
 			return 2
 		} else {
+			fmt.Println("Your OS is not Debian 12 or Ubuntu 22.04, please wait for support")
 			return 0
 		}
 	}
