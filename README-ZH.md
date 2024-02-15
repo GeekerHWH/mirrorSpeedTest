@@ -1,22 +1,24 @@
 <div align="center">
-  <a href="README.md">Click me for English version</a>
+  <a href="README.md">Click me for English version Doc</a>
 </div>
+
 # 测速 Debian/Ubuntu 镜像
 该工具主要帮助Debian系用户筛选最佳的apt仓库镜像
 
-如果你有任何的建议或者发现了任何的bug欢迎随时提出issue：）
+软件需求全部基于我个人换源工作流的使用体验，如果你有任何建议对软件使用体验进行改进，欢迎在github上提出issue
+
+# 项目亮点
+- 支持用go routine实现的轻量化多线程测速测延迟
+- 支持传参和交互两种模式
+- 使用Docker对应用进行了容器化便于部署
+- 使用Github Actions进行自动化软件测试
 
 # 示例
 ![Chinese version](Demo/2024-02-08.png)
 
 # To Do List
-- [x] 解决了contentLength = -1的问题，以防速度为负值
-- [x] 输入多个URL以测试速度
 - [x] 添加了changeMirror.sh以更改默认支持的镜像
-- [x] 模块化了速度测试代码
 - [x] 多选镜像以进行测试
-- [x] 在main.go中简化了代码以提高可读性
-- [x] 编写了中文README.md
 - [x] 在多选模式中支持一键多选
 - [x] 检查主机系统
 - [x] 支持以速度带宽排序显示
@@ -25,13 +27,15 @@
 - [x] 支持更多镜像源(已支持中国10大镜像站)
 > 详见 [[Debian中国大陆镜像源]](https://www.debian.org/mirror/list.zh-cn.html)
 - [x] 支持多线程测速（查看main/task/tester.go中Test函数）
-- [x] 支持延迟测试
 - [x] 支持多线程延迟测试
 - [ ] 性能调优
 - [ ] 内存使用调优
+- [ ] 支持conda和pip的镜像测试
 - [ ] 支持基于地域的镜像测试
+- [ ] 支持传递参数直接运行
 - [x] 应用容器化以迅速使用
 - [ ] 支持内嵌的换源操作
+- [ ] 使用Github Actions进行自动化软件测试
 
 # 如何使用
 ## 如何测试镜像速度
