@@ -19,54 +19,51 @@ type Mirror struct {
 	Ping  time.Duration
 }
 
-func Test(mirrorNames []string, mirrorURLs []string, initNumURLs int) {
-	if len(mirrorURLs) == initNumURLs {
-		TestMirrorSpeed(mirrorURLs[1])
+// will print the speed and latency of the mirrors
+func Test(mirrorNames []string, mirrorURLs []string) {
+	var waitGroup sync.WaitGroup
+	waitGroup.Add(len(mirrorURLs))
 
-	} else {
-		var waitGroup sync.WaitGroup
-		waitGroup.Add(len(mirrorURLs) - initNumURLs)
+	// multi-threads speed testing
+	// 多线程测速
+	var Mirrors []Mirror
+	var mu sync.Mutex // 用于保护Mirrors切片的互斥锁
+	for i := 0; i < len(mirrorURLs); i++ {
+		go func(index int, url string) {
+			defer waitGroup.Done()
 
-		// multi-threads speed testing
-		// 多线程测速
-		var Mirrors []Mirror
-		var mu sync.Mutex // 用于保护Mirrors切片的互斥锁
-		for i := initNumURLs; i < len(mirrorURLs); i++ {
-			go func(index int, url string) {
-				defer waitGroup.Done()
+			speed := TestMirrorSpeed(url)
+			ping := TCPPing(url)
 
-				speed := TestMirrorSpeed(url)
-				ping := TCPPing(url)
-
-				mu.Lock()
-				Mirrors = append(Mirrors, Mirror{Name: mirrorNames[index], URL: url, Speed: speed, Ping: ping})
-				mu.Unlock()
-			}(i, mirrorURLs[i])
-		}
-		waitGroup.Wait()
-
-		// 按速度带宽从大到小排序
-		sort.Slice(Mirrors, func(i, j int) bool {
-			return Mirrors[i].Speed > Mirrors[j].Speed
-		})
-
-		// 创建一个新的 tabwriter.Writer
-		w := tabwriter.NewWriter(os.Stdout, 0, 0, 0, ' ', tabwriter.Debug)
-
-		// 打印表头
-		fmt.Fprintln(w, "Name\tSpeed\tDelay")
-
-		// 打印数据
-		for i := range Mirrors {
-			// if i == 0 {
-			// 	fmt.Fprintf(w, "\x1b[32m%s\t%.2fMB/s\t%v\x1b[0m\n", Mirrors[i].Name, Mirrors[i].Speed, Mirrors[i].Ping)
-			// 	continue
-			// }
-			fmt.Fprintf(w, "%s\t%.2fMB/s\t%v\n", Mirrors[i].Name, Mirrors[i].Speed, Mirrors[i].Ping)
-		}
-		// 刷新并关闭 tabwriter.Writer
-		w.Flush()
+			mu.Lock()
+			Mirrors = append(Mirrors, Mirror{Name: mirrorNames[index], URL: url, Speed: speed, Ping: ping})
+			mu.Unlock()
+		}(i, mirrorURLs[i])
 	}
+	waitGroup.Wait()
+
+	// 按速度带宽从大到小排序
+	sort.Slice(Mirrors, func(i, j int) bool {
+		return Mirrors[i].Speed > Mirrors[j].Speed
+	})
+
+	// 创建一个新的 tabwriter.Writer
+	w := tabwriter.NewWriter(os.Stdout, 0, 0, 0, ' ', tabwriter.Debug)
+
+	// 打印表头
+	fmt.Fprintln(w, "Name\tSpeed\tDelay")
+
+	// 打印数据
+	for i := range Mirrors {
+		// if i == 0 {
+		// 	fmt.Fprintf(w, "\x1b[32m%s\t%.2fMB/s\t%v\x1b[0m\n", Mirrors[i].Name, Mirrors[i].Speed, Mirrors[i].Ping)
+		// 	continue
+		// }
+		fmt.Fprintf(w, "%s\t%.2fMB/s\t%v\n", Mirrors[i].Name, Mirrors[i].Speed, Mirrors[i].Ping)
+	}
+	// 刷新并关闭 tabwriter.Writer
+	w.Flush()
+
 }
 
 // Will print the speed of downloading the Debian Release file from the specified mirror.
@@ -76,8 +73,12 @@ func TestMirrorSpeed(url string) float64 {
 	// 开始计时
 	startTime := time.Now()
 
+	httpClient := http.Client{
+		Timeout: time.Second * 10, // 设置超时时间为10秒
+	}
+
 	// 发起 HTTP 请求，下载 Debian ChangeLog 文件
-	resp, err := http.Get(fmt.Sprintf("http://%s/debian/dists/stable/ChangeLog", url))
+	resp, err := httpClient.Get(fmt.Sprintf("http://%s/debian/dists/stable/ChangeLog", url))
 	if err != nil {
 		fmt.Printf("HTTP请求失败：%s\n", err)
 		return 0
@@ -122,9 +123,10 @@ func TestMirrorSpeed(url string) float64 {
 func TCPPing(url string) time.Duration {
 	start := time.Now()
 
-	conn, err := net.Dial("tcp", url+":80")
+	conn, err := net.DialTimeout("tcp", url+":80", time.Second*5)
 	if err != nil {
 		fmt.Printf("TCP Ping %s: %s\n", url, err)
+		return 0
 	}
 	defer conn.Close()
 

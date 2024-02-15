@@ -15,7 +15,7 @@ func ParametersRun() {
 	// 设置命令行参数
 	flag.BoolVar(&interactiveMode, "i", false, "Enter interactive mode")
 	flag.BoolVar(&showHelp, "h", false, "Print program introduction and usage of its parameters")
-	flag.StringVar(&url, "url", "", "Specify a URL")
+	flag.StringVar(&url, "url", "", "Specify a single URL")
 
 	// 定制Usage信息
 	flag.Usage = func() {
@@ -36,7 +36,7 @@ func ParametersRun() {
 	if url != "" {
 		var URL = []string{url}
 		// 在这里可以使用url变量进行相应的操作
-		task.Test(URL, URL, 0)
+		task.Test(URL, URL)
 		return
 	}
 
