@@ -1,0 +1,952 @@
+{
+    "countries": {
+        "AM": {
+            "Name": [
+                "am.debian.org",
+                "asnet"
+            ],
+            "URL": [
+                "ftp.am.debian.org",
+                "mirrors.asnet.am"
+            ]
+        },
+        "AU": {
+            "Name": [
+                "au.debian.org",
+                "Digitalpacific.com.au",
+                "aarnet.edu.au",
+                "mirror.gsl.icu",
+                "LinuxOrgAU",
+                "realcompute.io",
+                "xtom.au"
+            ],
+            "URL": [
+                "ftp.au.debian.org",
+                "debian.mirror.digitalpacific.com.au",
+                "mirror.aarnet.edu.au",
+                "mirror.gsl.icu",
+                "mirror.linux.org.au",
+                "mirror.realcompute.io",
+                "mirrors.xtom.au"
+            ]
+        },
+        "AT": {
+            "Name": [
+                "at.debian.org",
+                "anexia.at",
+                "lagis.at",
+                "sil.at",
+                "tu-graz.ac.at"
+            ],
+            "URL": [
+                "ftp.at.debian.org",
+                "debian.anexia.at",
+                "debian.lagis.at",
+                "debian.sil.at",
+                "ftp.tu-graz.ac.at"
+            ]
+        },
+        "BY": {
+            "Name": [
+                "by.debian.org",
+                "byfly.by",
+                "datacenter.by"
+            ],
+            "URL": [
+                "ftp.by.debian.org",
+                "ftp.byfly.by",
+                "mirror.datacenter.by"
+            ]
+        },
+        "BE": {
+            "Name": [
+                "be.debian.org",
+                "belnet.be",
+                "as35701.net"
+            ],
+            "URL": [
+                "ftp.be.debian.org",
+                "ftp.belnet.be",
+                "mirror.as35701.net"
+            ]
+        },
+        "BR": {
+            "Name": [
+                "br.debian.org",
+                "alcateia.ufscar.br",
+                "debian.c3sl.ufpr.br",
+                "uepg.br"
+            ],
+            "URL": [
+                "ftp.br.debian.org",
+                "alcateia.ufscar.br",
+                "debian.c3sl.ufpr.br",
+                "mirror.uepg.br"
+            ]
+        },
+        "BG": {
+            "Name": [
+                "bg.debian.org",
+                "debian.a1.bg",
+                "debian.telecoms.bg",
+                "uni-sofia.bg",
+                "netix.net",
+                "telepoint.bg"
+            ],
+            "URL": [
+                "ftp.bg.debian.org",
+                "debian.a1.bg",
+                "debian.telecoms.bg",
+                "ftp.uni-sofia.bg",
+                "mirrors.netix.net",
+                "mirror.telepoint.bg"
+            ]
+        },
+        "CA": {
+            "Name": [
+                "iweb.ca",
+                "mirror01-pcl-ott1.accuris.ca",
+                "csclub.uwaterloo.ca",
+                "dst.ca",
+                "it.ubc.ca"
+            ],
+            "URL": [
+                "debian.mirror.iweb.ca",
+                "mirror01-pcl-ott1.accuris.ca",
+                "mirror.csclub.uwaterloo.ca",
+                "mirror.dst.ca",
+                "mirror.it.ubc.ca"
+            ]
+        },
+        "CL": {
+            "Name": [
+                "cl.Debian.org",
+                "redlibre.cl",
+                "insacom.cl",
+                "ufro.cl"
+            ],
+            "URL": [
+                "ftp.cl.debian.org",
+                "debian.redlibre.cl",
+                "mirror.insacom.cl",
+                "mirror.ufro.cl"
+            ]
+        },
+        "CN": {
+            "Name": [
+                "cn.Debian.org",
+                "Tsinghua",
+                "USTC",
+                "Aliyun",
+                "CQU",
+                "NJU",
+                "163",
+                "BFSU",
+                "ZJU",
+                "neusoft"
+            ],
+            "URL": [
+                "ftp.cn.debian.org",
+                "mirrors.tuna.tsinghua.edu.cn",
+                "mirrors.ustc.edu.cn",
+                "mirrors.aliyun.com",
+                "mirrors.cqu.edu.cn",
+                "mirror.nju.edu.cn",
+                "mirrors.163.com",
+                "mirrors.bfsu.edu.cn",
+                "mirrors.zju.edu.cn",
+                "mirrors.neusoft.edu.cn"
+            ]
+        },
+        "CR": {
+            "Name": [
+                "una.ac.cr",
+                "ucr.ac.cr"
+            ],
+            "URL": [
+                "debianmirror.una.ac.cr",
+                "mirrors.ucr.ac.cr"
+            ]
+        },
+        "HR": {
+            "Name": [
+                "hr.debian.org",
+                "carnet.hr",
+                "iskon.hr"
+            ],
+            "URL": [
+                "ftp.hr.debian.org",
+                "debian.carnet.hr",
+                "debian.iskon.hr"
+            ]
+        },
+        "CZ": {
+            "Name": [
+                "cz.debian.org",
+                "web4u.cz",
+                "superhosting.cz",
+                "cvut.cz",
+                "ftp.debian.cz",
+                "sh.cvut.cz",
+                "zcu.cz",
+                "merlin.fit.vutbr.cz",
+                "dkm.cz",
+                "it4i.cz",
+                "prg.webglobe.com",
+                "nic.cz"
+            ],
+            "URL": [
+                "ftp.cz.debian.org",
+                "debian.mirror.web4u.cz",
+                "debian.superhosting.cz",
+                "ftp.cvut.cz",
+                "ftp.debian.cz",
+                "ftp.sh.cvut.cz",
+                "ftp.zcu.cz",
+                "merlin.fit.vutbr.cz",
+                "mirror.dkm.cz",
+                "mirror.it4i.cz",
+                "mirror-prg.webglobe.com",
+                "mirrors.nic.cz"
+            ]
+        },
+        "DK": {
+            "Name": [
+                "dk.debian.org",
+                "asergo.com",
+                "one.com",
+                "dotsrc.org",
+                "rackhosting.com"
+            ],
+            "URL": [
+                "ftp.dk.debian.org",
+                "mirror.asergo.com",
+                "mirror.one.com",
+                "mirrors.dotsrc.org",
+                "mirrors.rackhosting.com"
+            ]
+        },
+        "EE": {
+            "Name": [
+                "xtom.ee"
+            ],
+            "URL": [
+                "mirrors.xtom.ee"
+            ]
+        },
+        "FI": {
+            "Name": [
+                "fi.debian.org",
+                "nic.funet.fi"
+            ],
+            "URL": [
+                "ftp.fi.debian.org",
+                "www.nic.funet.fi"
+            ]
+        },
+        "FR": {
+            "Name": [
+                "fr.debian.org",
+                "obspm.fr",
+                "polytech-lille.fr",
+                "proxad.net",
+                "naitways.net",
+                "ec-m.fr",
+                "rezopole.net",
+                "univ-pau.fr",
+                "u-picardie.fr",
+                "univ-lorraine.fr",
+                "gitoyen.net",
+                "ibcp.fr",
+                "johnnybegood.fr",
+                "plusserver.com",
+                "ircam.fr"
+            ],
+            "URL": [
+                "ftp.fr.debian.org",
+                "debian.obspm.fr",
+                "debian.polytech-lille.fr",
+                "debian.proxad.net",
+                "deb-mir1.naitways.net",
+                "ftp.ec-m.fr",
+                "ftp.rezopole.net",
+                "ftp.univ-pau.fr",
+                "ftp.u-picardie.fr",
+                "miroir.univ-lorraine.fr",
+                "mirror.gitoyen.net",
+                "mirror.ibcp.fr",
+                "mirror.johnnybegood.fr",
+                "mirror.plusserver.com",
+                "mirrors.ircam.fr"
+            ]
+        },
+        "GE": {
+            "Name": [
+                "grena.ge"
+            ],
+            "URL": [
+                "debian.grena.ge"
+            ]
+        },
+        "DE": {
+            "Name": [
+                "de.debian.org",
+                "charite.de",
+                "inf.tu-dresden.de",
+                "intergenia.de",
+                "iphh.net",
+                "lrz.de",
+                "netcologne.de",
+                "tu-bs.de",
+                "clouvider.net",
+                "fau.de",
+                "gwdg.de",
+                "hosteurope.de",
+                "stud.hs-esslingen.de",
+                "tu-chemnitz.de",
+                "tu-clausthal.de",
+                "uni-bayreuth.de",
+                "uni-hannover.de",
+                "uni-mainz.de",
+                "23m.com",
+                "de.leaseweb.net",
+                "eu.oneandone.net",
+                "informatik.tu-freiberg.de",
+                "netzwerge.de",
+                "xtom.de",
+                "united-gameserver.de",
+                "wtnet.de",
+                "plutex.de"
+            ],
+            "URL": [
+                "ftp.de.debian.org",
+                "debian.charite.de",
+                "debian.inf.tu-dresden.de",
+                "debian.intergenia.de",
+                "debian.mirror.iphh.net",
+                "debian.mirror.lrz.de",
+                "debian.netcologne.de",
+                "debian.tu-bs.de",
+                "de.mirrors.clouvider.net",
+                "ftp.fau.de",
+                "ftp.gwdg.de",
+                "ftp.hosteurope.de",
+                "ftp-stud.hs-esslingen.de",
+                "ftp.tu-chemnitz.de",
+                "ftp.tu-clausthal.de",
+                "ftp.uni-bayreuth.de",
+                "ftp.uni-hannover.de",
+                "ftp.uni-mainz.de",
+                "mirror.23m.com",
+                "mirror.de.leaseweb.net",
+                "mirror.eu.oneandone.net",
+                "mirror.informatik.tu-freiberg.de",
+                "mirror.netzwerge.de",
+                "mirrors.xtom.de",
+                "mirror.united-gameserver.de",
+                "mirror.wtnet.de",
+                "pubmirror.plutex.de"
+            ]
+        },
+        "GR": {
+            "Name": [
+                "otenet.gr"
+            ],
+            "URL": [
+                "debian.otenet.gr"
+            ]
+        },
+        "HK": {
+            "Name": [
+                "hk.debian.org",
+                "xtom.com.hk"
+            ],
+            "URL": [
+                "ftp.hk.debian.org",
+                "mirror.xtom.com.hk"
+            ]
+        },
+        "HU": {
+            "Name": [
+                "bme.hu",
+                "jztkft.hu"
+            ],
+            "URL": [
+                "ftp.bme.hu",
+                "repo.jztkft.hu"
+            ]
+        },
+        "IS": {
+            "Name": [
+                "is.debian.org",
+                "flokinet.net"
+            ],
+            "URL": [
+                "ftp.is.debian.org",
+                "is.mirror.flokinet.net"
+            ]
+        },
+        "ID": {
+            "Name": [
+                "kartolo.sby.datautama.net.id",
+                "kebo.pens.ac.id",
+                "poliwangi.ac.id",
+                "unair.ac.id",
+                "mr.heru.id"
+            ],
+            "URL": [
+                "kartolo.sby.datautama.net.id",
+                "kebo.pens.ac.id",
+                "mirror.poliwangi.ac.id",
+                "mirror.unair.ac.id",
+                "mr.heru.id"
+            ]
+        },
+        "IR": {
+            "Name": [
+                "hostiran.ir",
+                "parspack.com"
+            ],
+            "URL": [
+                "debian.hostiran.ir",
+                "debian.parspack.com"
+            ]
+        },
+        "IL": {
+            "Name": [
+                "interhost.co.il"
+            ],
+            "URL": [
+                "debian.interhost.co.il"
+            ]
+        },
+        "IT": {
+            "Name": [
+                "it.debian.org",
+                "dynamica.it",
+                "garr.it",
+                "ftp.linux.it",
+                "giano.com.dist.unige.it",
+                "units.it"
+            ],
+            "URL": [
+                "ftp.it.debian.org",
+                "debian.dynamica.it",
+                "debian.mirror.garr.it",
+                "ftp.linux.it",
+                "giano.com.dist.unige.it",
+                "mirror.units.it"
+            ]
+        },
+        "JP": {
+            "Name": [
+                "jp.debian.org",
+                "sakura.ne.jp",
+                "kddilabs.jp",
+                "nara.wide.ad.jp",
+                "riken.jp",
+                "xtom.jp",
+                "repo.jing.rocks"
+            ],
+            "URL": [
+                "ftp.jp.debian.org",
+                "debian-mirror.sakura.ne.jp",
+                "ftp.kddilabs.jp",
+                "ftp.nara.wide.ad.jp",
+                "ftp.riken.jp",
+                "mirrors.xtom.jp",
+                "repo.jing.rocks"
+            ]
+        },
+        "KZ": {
+            "Name": [
+                "hoster.kz",
+                "ps.kz"
+            ],
+            "URL": [
+                "mirror.hoster.kz",
+                "mirror.ps.kz"
+            ]
+        },
+        "KE": {
+            "Name": [
+                "ac.ke",
+                "liquidtelecom.com"
+            ],
+            "URL": [
+                "debian.mirror.ac.ke",
+                "debian.mirror.liquidtelecom.com"
+            ]
+        },
+        "KR": {
+            "Name": [
+                "kr.debian.org",
+                "kaist.ac.kr",
+                "siwoo.org"
+            ],
+            "URL": [
+                "ftp.kr.debian.org",
+                "ftp.kaist.ac.kr",
+                "mirror.siwoo.org"
+            ]
+        },
+        "LV": {
+            "Name": [
+                "koyanet.lv",
+                "cloudhosting.lv"
+            ],
+            "URL": [
+                "debian.koyanet.lv",
+                "mirror.cloudhosting.lv"
+            ]
+        },
+        "LT": {
+            "Name": [
+                "lt.debian.org",
+                "balt.net",
+                "vu.lt",
+                "litnet.lt",
+                "vpsnet.com"
+            ],
+            "URL": [
+                "ftp.lt.debian.org",
+                "debian.balt.net",
+                "debian.mirror.vu.lt",
+                "mirror.litnet.lt",
+                "mirror.vpsnet.com"
+            ]
+        },
+        "LU": {
+            "Name": [
+                "root.lu"
+            ],
+            "URL": [
+                "debian.mirror.root.lu"
+            ]
+        },
+        "MK": {
+            "Name": [
+                "mk.interspace.com",
+                "onevip.mk"
+            ],
+            "URL": [
+                "mirror-mk.interspace.com",
+                "mirror.onevip.mk"
+            ]
+        },
+        "MD": {
+            "Name": [
+                "md.debian.org",
+                "as43289.net"
+            ],
+            "URL": [
+                "ftp.md.debian.org",
+                "mirror.as43289.net"
+            ]
+        },
+        "MA": {
+            "Name": [
+                "marwan.ma"
+            ],
+            "URL": [
+                "mirror.marwan.ma"
+            ]
+        },
+        "NL": {
+            "Name": [
+                "nl.debian.org",
+                "snt.utwente.nl",
+                "duocast.net",
+                "i3d.net",
+                "nl.datapacket.com",
+                "nl.leaseweb.net",
+                "seedvps.com",
+                "hostiserver.com",
+                "xtom.nl",
+                "clouvider.net"
+            ],
+            "URL": [
+                "ftp.nl.debian.org",
+                "debian.snt.utwente.nl",
+                "mirror.duocast.net",
+                "mirror.i3d.net",
+                "mirror.nl.datapacket.com",
+                "mirror.nl.leaseweb.net",
+                "mirror.seedvps.com",
+                "mirrors.hostiserver.com",
+                "mirrors.xtom.nl",
+                "nl.mirrors.clouvider.net"
+            ]
+        },
+        "NC": {
+            "Name": [
+                "nc.debian.org",
+                "nautile.nc",
+                "lagoon.nc"
+            ],
+            "URL": [
+                "ftp.nc.debian.org",
+                "debian.nautile.nc",
+                "mirror.lagoon.nc"
+            ]
+        },
+        "NZ": {
+            "Name": [
+                "nz.debian.org",
+                "linux.purple-cat.net",
+                "fsmg.org.nz"
+            ],
+            "URL": [
+                "ftp.nz.debian.org",
+                "linux.purple-cat.net",
+                "mirror.fsmg.org.nz"
+            ]
+        },
+        "NO": {
+            "Name": [
+                "no.debian.org",
+                "uio.no"
+            ],
+            "URL": [
+                "ftp.no.debian.org",
+                "ftp.uio.no"
+            ]
+        },
+        "PL": {
+            "Name": [
+                "pl.debian.org",
+                "inhost.pro",
+                "agh.edu.pl",
+                "icm.edu.pl",
+                "psnc.pl",
+                "task.gda.pl"
+            ],
+            "URL": [
+                "ftp.pl.debian.org",
+                "debian.inhost.pro",
+                "ftp.agh.edu.pl",
+                "ftp.icm.edu.pl",
+                "ftp.psnc.pl",
+                "ftp.task.gda.pl"
+            ]
+        },
+        "PT": {
+            "Name": [
+                "pt.debian.org",
+                "uevora.pt",
+                "eq.uc.pt",
+                "ptisp.pt",
+                "up.pt"
+            ],
+            "URL": [
+                "ftp.pt.debian.org",
+                "debian.uevora.pt",
+                "ftp.eq.uc.pt",
+                "mirrors.ptisp.pt",
+                "mirrors.up.pt"
+            ]
+        },
+        "RE": {
+            "Name": [
+                "mithril.re",
+                "depot-debian.univ-reunion.fr"
+            ],
+            "URL": [
+                "debian.mithril.re",
+                "depot-debian.univ-reunion.fr"
+            ]
+        },
+        "RO": {
+            "Name": [
+                "mirror.linux.ro",
+                "hostico.ro",
+                "nav.ro",
+                "flokinet.net"
+            ],
+            "URL": [
+                "mirror.linux.ro",
+                "mirrors.hostico.ro",
+                "mirrors.nav.ro",
+                "ro.mirror.flokinet.net"
+            ]
+        },
+        "RU": {
+            "Name": [
+                "ru.debian.org",
+                "psn.ru",
+                "corbina.net",
+                "docker.ru",
+                "hyperdedic.ru",
+                "mephi.ru",
+                "powernet.com.ru"
+            ],
+            "URL": [
+                "ftp.ru.debian.org",
+                "ftp.psn.ru",
+                "mirror.corbina.net",
+                "mirror.docker.ru",
+                "mirror.hyperdedic.ru",
+                "mirror.mephi.ru",
+                "mirrors.powernet.com.ru"
+            ]
+        },
+        "SG": {
+            "Name": [
+                "coganng.com",
+                "ossmirror.mycloud.services"
+            ],
+            "URL": [
+                "mirror.coganng.com",
+                "ossmirror.mycloud.services"
+            ]
+        },
+        "SK": {
+            "Name": [
+                "sk.debian.org",
+                "bbxnet.sk",
+                "antik.sk",
+                "ftp.debian.sk"
+            ],
+            "URL": [
+                "ftp.sk.debian.org",
+                "deb.bbxnet.sk",
+                "ftp.antik.sk",
+                "ftp.debian.sk"
+            ]
+        },
+        "SI": {
+            "Name": [
+                "si.debian.org"
+            ],
+            "URL": [
+                "ftp.si.debian.org"
+            ]
+        },
+        "South Africa": {
+            "Name": [
+                "debian.saix.net",
+                "ftp.is.co.za"
+            ],
+            "URL": [
+                "debian.saix.net",
+                "ftp.is.co.za"
+            ]
+        },
+        "ES": {
+            "Name": [
+                "es.debian.org",
+                "grn.cat",
+                "redimadrid.es",
+                "redparra.com",
+                "uvigo.es",
+                "caliu.cat",
+                "cica.es",
+                "udc.es",
+                "repo.ifca.es",
+                "softlibre.unizar.es",
+                "ulises.hostalia.com"
+            ],
+            "URL": [
+                "ftp.es.debian.org",
+                "debian.grn.cat",
+                "debian.redimadrid.es",
+                "debian.redparra.com",
+                "debian.uvigo.es",
+                "ftp.caliu.cat",
+                "ftp.cica.es",
+                "ftp.udc.es",
+                "repo.ifca.es",
+                "softlibre.unizar.es",
+                "ulises.hostalia.com"
+            ]
+        },
+        "SE": {
+            "Name": [
+                "se.debian.org",
+                "lth.se",
+                "su.se",
+                "acc.umu.se",
+                "infania.net",
+                "glesys.net",
+                "zetup.net"
+            ],
+            "URL": [
+                "ftp.se.debian.org",
+                "debian.lth.se",
+                "debian.mirror.su.se",
+                "ftp.acc.umu.se",
+                "ftpmirror1.infania.net",
+                "mirrors.glesys.net",
+                "mirror.zetup.net"
+            ]
+        },
+        "CH": {
+            "Name": [
+                "ch.debian.org",
+                "ethz.ch",
+                "mirror1.infomaniak.com",
+                "mirror2.infomaniak.com",
+                "init7.net",
+                "iway.ch",
+                "sinavps.ch",
+                "pkg.adfinis.com"
+            ],
+            "URL": [
+                "ftp.ch.debian.org",
+                "debian.ethz.ch",
+                "mirror1.infomaniak.com",
+                "mirror2.infomaniak.com",
+                "mirror.init7.net",
+                "mirror.iway.ch",
+                "mirror.sinavps.ch",
+                "pkg.adfinis.com"
+            ]
+        },
+        "TW": {
+            "Name": [
+                "tw.debian.org",
+                "csie.ntu.edu.tw",
+                "cs.nycu.edu.tw",
+                "tku.edu.tw",
+                "opensource.nchc.org.tw",
+                "tw1.mirror.blendbyte.net"
+            ],
+            "URL": [
+                "ftp.tw.debian.org",
+                "debian.csie.ntu.edu.tw",
+                "debian.cs.nycu.edu.tw",
+                "ftp.tku.edu.tw",
+                "opensource.nchc.org.tw",
+                "tw1.mirror.blendbyte.net"
+            ]
+        },
+        "TH": {
+            "Name": [
+                "debianclub.org",
+                "applebred.net",
+                "kku.ac.th"
+            ],
+            "URL": [
+                "ftp.debianclub.org",
+                "mirror.applebred.net",
+                "mirror.kku.ac.th"
+            ]
+        },
+        "TR": {
+            "Name": [
+                "tr.debian.org",
+                "gnu.gen.tr",
+                "ftp.linux.org.tr"
+            ],
+            "URL": [
+                "ftp.tr.debian.org",
+                "debian.gnu.gen.tr",
+                "ftp.linux.org.tr"
+            ]
+        },
+        "UA": {
+            "Name": [
+                "netforce.hosting",
+                "volia.net",
+                "fastmirror.pp.ua",
+                "mirohost.net",
+                "ukrnames.com"
+            ],
+            "URL": [
+                "debian.netforce.hosting",
+                "debian.volia.net",
+                "fastmirror.pp.ua",
+                "mirror.mirohost.net",
+                "mirror.ukrnames.com"
+            ]
+        },
+        "UK": {
+            "Name": [
+                "uk.debian.org",
+                "uk2.net",
+                "uk.sargasso.net",
+                "free.hands.com",
+                "ticklers.org",
+                "cov.ukservers.com",
+                "lchost.net",
+                "mythic-beasts.com",
+                "ox.ac.uk",
+                "positive-internet.com",
+                "coreix.net",
+                "mirrorservice.org",
+                "sov.uk.goscomb.net",
+                "vinehost.net",
+                "ukdebian.mirror.anlx.net",
+                "uk.mirrors.clouvider.net"
+            ],
+            "URL": [
+                "ftp.uk.debian.org",
+                "debian.mirrors.uk2.net",
+                "debian.mirror.uk.sargasso.net",
+                "free.hands.com",
+                "ftp.ticklers.org",
+                "mirror.cov.ukservers.com",
+                "mirror.lchost.net",
+                "mirror.mythic-beasts.com",
+                "mirror.ox.ac.uk",
+                "mirror.positive-internet.com",
+                "mirrors.coreix.net",
+                "mirrorservice.org",
+                "mirror.sov.uk.goscomb.net",
+                "mirror.vinehost.net",
+                "ukdebian.mirror.anlx.net",
+                "uk.mirrors.clouvider.net"
+            ]
+        },
+        "US": {
+            "Name": [
+                "US Debian Mirror",
+                "Clouvider Atlanta Mirror",
+                "Lehigh University Mirror",
+                "MIT CSAIL Mirror",
+                "Binghamton University Mirror",
+                "Constant Mirror",
+                "OSU Open Source Lab Mirror",
+                "University of Chicago Mirror",
+                "Clouvider Los Angeles Mirror",
+                "Clarkson University Mirror",
+                "Cogent Co Mirror",
+                "Nexril Dallas Mirror",
+                "Keystealth Mirror",
+                "Rustytel Mirror",
+                "Accretive Networks Mirror",
+                "MTU LUG Mirror",
+                "Namecheap Mirror",
+                "Wikimedia Mirror",
+                "Leaseweb US Mirror",
+                "OneAndOne US Mirror",
+                "Clouvider NYC Mirror",
+                "Purdue University Mirror"
+            ],
+            "URL": [
+                "ftp.us.debian.org",
+                "atl.mirrors.clouvider.net",
+                "debian.cc.lehigh.edu",
+                "debian.csail.mit.edu",
+                "debian.cs.binghamton.edu",
+                "debian.mirror.constant.com",
+                "debian.osuosl.org",
+                "debian.uchicago.edu",
+                "la.mirrors.clouvider.net",
+                "mirror.clarkson.edu",
+                "mirror.cogentco.com",
+                "mirror.dal.nexril.net",
+                "mirror.keystealth.org",
+                "mirror.rustytel.net",
+                "mirrors.accretive-networks.net",
+                "mirrors.lug.mtu.edu",
+                "mirrors.namecheap.com",
+                "mirrors.wikimedia.org",
+                "mirror.us.leaseweb.net",
+                "mirror.us.oneandone.net",
+                "nyc.mirrors.clouvider.net",
+                "plug-mirror.rcac.purdue.edu"
+            ]
+        }
+    }
+}

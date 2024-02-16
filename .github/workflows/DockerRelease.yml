@@ -1,0 +1,35 @@
+# This workflow will build a golang project and push it to Dockerfile when new release happened
+name: DockerRelease
+
+on:
+    release:
+      types:
+        - published
+
+jobs:
+
+  build-and-push-docker:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Log in to Docker Hub
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: |
+        sudo echo "$DOCKER_PASSWORD" | sudo docker login -u "$DOCKER_USERNAME" --password-stdin
+
+    - name: Build and Push Docker Image
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      run: |
+        sudo docker build -t geekerhwh/mst:latest .
+        sudo docker push $DOCKER_USERNAME/mst:latest
+
+    - name: Test Mirror Speed(US)
+      run: sudo docker run geekerhwh/mst:latest ./mirrorSpeedTest -c US
