@@ -14,38 +14,30 @@
 - 使用Github Actions进行自动化软件测试
 
 # 示例
-![Chinese version](Demo/2024-02-16.png)
+支持世界各地的镜像源CN(local) and US(GithubActions with Docker)
+<div style="display: flex; justify-content: space-between;">
+    <img src="Demo/2024-02-16.png" alt="CN" style="width: 50%;">
+    <img src="Demo/ActionsOutput.png" alt="US" style="width: 48%;">
+</div>
 
 # 功能
 - `-i` 进入交互模式
 - `--url` 指定一个镜像地址
-
-# To Do List
-- [x] 添加了changeMirror.sh以更改默认支持的镜像
-- [x] 多选镜像以进行测试
-- [x] 在多选模式中支持一键多选
-- [x] 检查主机系统
-- [x] 支持以速度带宽排序显示
-- [x] 支持更多镜像源(现在支持大多数中国和大多数美国镜像)
-> 详见 [[Debian镜像源]](https://www.debian.org/mirror/list.en.html)
-- [x] 支持多线程测速（查看main/task/tester.go中Test函数）
-- [x] 支持多线程延迟测试
-- [ ] 支持在交互模式中选择国家
-- [ ] 支持conda和pip的镜像测试
-- [ ] 支持基于地域的镜像测试
-- [ ] 支持传递参数直接运行
-- [x] 应用容器化以迅速使用
-- [ ] 支持内嵌的换源操作
-- [ ] 使用Github Actions进行自动化软件测试
-- [ ] 性能调优
-- [ ] 内存使用调优
+- `-c` 用双字母短称输入待测速国家
+  > 比如 `US`美国的镜像; `CN` 中国的镜像
 
 # 如何使用
 ## 如何测试镜像速度
-### 使用Docker启动
-1. 确保你已经安装了docker后执行该命令即可:
+### 使用docker启动(cmd mode)
+- use `--url` to specify a single mirror url
+- or use `-c` to choose your country
 ```bash
-docker run -it geekerhwh/mst:latest
+sudo docker run geekerhwh/mst:latest ./mirrorSpeedTest -c US
+```
+### 使用docker启动(交互模式)
+1. make sure docker is installed then run:
+```bash
+sudo docker run geekerhwh/mst:latest ./mirrorSpeedTest -i
 ```
 ### 执行二进制文件
 1. 从Release下载mirrorSpeedTest和urls.json(确保在同一文件夹下)
@@ -68,8 +60,29 @@ go run main/main.go
 ```
 3. 跟随app指令交互即可
 
-## 测速后如何更换源
+## 测速后如何更换源(实验性功能)
 ```bash
 # running in root is needed
 sudo ./changeMirror.sh
 ```
+
+# What's next
+- [x] 添加了changeMirror.sh以更改默认支持的镜像
+- [x] 多选镜像以进行测试
+- [x] 在多选模式中支持一键多选
+- [x] 检查主机系统
+- [x] 支持以速度带宽排序显示
+- [x] 支持更多镜像源(现在支持大多数中国和大多数美国镜像)
+> 详见 [[Debian镜像源]](https://www.debian.org/mirror/list.en.html)
+- [x] 支持多线程测速（查看main/task/tester.go中Test函数）
+- [x] 支持多线程延迟测试
+- [ ] 支持在交互模式中选择国家
+- [ ] 支持conda和pip的镜像测试
+- [ ] 支持基于地域的镜像测试
+- [x] 支持传递参数直接运行
+- [ ] 支持传入多个国家进行测试
+- [x] 应用容器化以迅速使用
+- [ ] 支持内嵌的换源操作
+- [ ] 使用Github Actions进行自动化软件测试
+- [ ] 性能调优
+- [ ] 内存使用调优

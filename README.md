@@ -3,8 +3,9 @@
 </div>
 
 # A project for Testing Debian/Ubuntu mirrors
-This tool is mainly to help Debian users to filter the best apt Repo for themselves,
-especially for people who live in China with a special Network Environment.
+This tool is mainly to help Debian users to select the best apt Repo for themselves,
+especially for people who live in China with a special Network Environment, **now it
+has supported people all of the world**.
 
 I know there are some netselect tools, but the most important thing when downloading is BANDWITH
 The software requirements are all based on my personal experience in the source switching workflow. 
@@ -23,7 +24,7 @@ all I wish is your stars. XD
 - No need for `sudo` if you don't want to change apt source list
 
 # Demo
-support both CN(local) and US(GithubActions with Docker)
+support mirrors all around the world, CN(local) and US(GithubActions with Docker)
 <div style="display: flex; justify-content: space-between;">
     <img src="Demo/2024-02-16.png" alt="CN" style="width: 50%;">
     <img src="Demo/ActionsOutput.png" alt="US" style="width: 48%;">
@@ -34,31 +35,11 @@ support both CN(local) and US(GithubActions with Docker)
 - `-i` enter interactive mode
 - `--url` specify a single url
 - `-c` specify two-letter country abbreviation for your country
-  > `US`for American Mirrors; `CN` for Chinese Mirrors
-
-# What's next
-- [x] added changeMirror.sh to change the mirror supported by default
-- [x] multi choose mirrors to test
-- [x] support choose all in multi choice mode
-- [x] check whether the host OS is Debian
-- [x] support sorting from best to worst
-- [x] support more mirrors(Now supports most Chinese and most US mirrors)
-> Check [[Debian Worldwide Mirror Lists]](https://www.debian.org/mirror/list.en.html)
-- [x] support multi-threads testing in parallel(check task/tester.go)
-- [x] support multi-threads latency testing in parallel
-- [ ] support choose country in interactive mode(Now support only CN)
-- [ ] support conda and pip mirror testing
-- [ ] support geo-based mirrors testing to present perfect suggestion
-- [ ] support passing parameters for speed testing
-- [x] containerize the app so that skip install go runtime
-- [ ] support integrated apt sourcelist file editting(default choose the fastest)
-- [ ] use Github Actions to automate testing
-- [ ] tuning the performance
-- [ ] tuning the RAM usage
-- [ ] beyond my imagination...
+  > e.g. `US`for American Mirrors; `CN` for Chinese Mirrors
 
 # How to use it?
 ## to test mirrors' speeds:
+There are 3 ways to run speed testing
 ### Run with Docker(cmd mode)
 - use `--url` to specify a single mirror url
 - or use `-c` to choose your country
@@ -92,8 +73,30 @@ go run main/main.go
 1. follow the instruction of the app to get your best mirror(English version 
 coming soon)
 
-## to change to the best mirror after Testing
+## to change to the best mirror after Testing(experimental)
 ```bash
 # running in root is needed
 sudo ./changeMirror.sh
 ```
+
+# What's next
+- [x] added changeMirror.sh to change the mirror supported by default
+- [x] multi choose mirrors to test
+- [x] support choose all in multi choice mode
+- [x] check whether the host OS is Debian
+- [x] support sorting from best to worst
+- [x] support worldwide mirrors(almost all debian mirror)
+> Check [[Debian Worldwide Mirror Lists]](https://www.debian.org/mirror/list.en.html)
+- [x] support multi-threads testing in parallel(check task/tester.go)
+- [x] support multi-threads latency testing in parallel
+- [ ] support choose country in interactive mode(Now support only CN)
+- [ ] support conda and pip mirror testing
+- [ ] support geo-based mirrors testing to present perfect suggestion
+- [x] support passing parameters for speed testing
+- [ ] support passing multi parameters(countries) for Europe user
+- [x] containerize the app so that skip install go runtime
+- [ ] support integrated apt sourcelist file editting(default choose the fastest)
+- [ ] use Github Actions to automate testing
+- [ ] tuning the performance
+- [ ] tuning the RAM usage
+- [ ] beyond my imagination...
