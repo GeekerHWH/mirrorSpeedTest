@@ -8,16 +8,16 @@ import (
 
 func ParametersRun() {
 	// 定义命令行参数
-	var interactiveMode bool
 	var showHelp bool
 	var url string
 	var country string
+	var interactiveCountry string
 
 	// 设置命令行参数
-	flag.BoolVar(&interactiveMode, "i", false, "Enter interactive mode")
 	flag.BoolVar(&showHelp, "h", false, "Print program introduction and usage of its parameters")
 	flag.StringVar(&url, "url", "", "Specify a single URL")
-	flag.StringVar(&country, "c", "", "Specify the country (CN or US)")
+	flag.StringVar(&country, "c", "", "Specify the country")
+	flag.StringVar(&interactiveCountry, "i", "", "Specify the country and Enter interactive mode")
 
 	// 定制Usage信息
 	flag.Usage = func() {
@@ -55,8 +55,8 @@ func ParametersRun() {
 	}
 
 	// 如果有-i参数，则进入交互模式
-	if interactiveMode {
-		Interactive()
+	if interactiveCountry != "" {
+		Interactive(interactiveCountry)
 		return
 	}
 

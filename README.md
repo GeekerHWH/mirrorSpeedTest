@@ -49,7 +49,7 @@ sudo docker run geekerhwh/mst:latest ./mirrorSpeedTest -c US
 ### Run with Docker(interactive mode)
 1. make sure docker is installed then run:
 ```bash
-sudo docker run geekerhwh/mst:latest ./mirrorSpeedTest -i
+sudo docker run geekerhwh/mst:latest ./mirrorSpeedTest -i US
 ```
 ### or Run with the binary file
 1. Download the mirrorSpeedTest and urls.json file(make sure files are in the same directory)
@@ -59,7 +59,7 @@ chmod 777 ./mirrorSpeedTest
 ```
 3. run it in terminal
 ```bash
-./mirrorSpeedTest
+./mirrorSpeedTest -c US
 ```
 ### or If you want to run with go runtime
 1. make sure your computer has the Go runtime installed
@@ -68,7 +68,7 @@ go env
 ```
 1. enter the directory of this project, then open the terminal to run:
 ```bash
-go run main/main.go
+go run main/main.go -c US
 ```
 1. follow the instruction of the app to get your best mirror(English version 
 coming soon)
@@ -89,7 +89,8 @@ sudo ./changeMirror.sh
 > Check [[Debian Worldwide Mirror Lists]](https://www.debian.org/mirror/list.en.html)
 - [x] support multi-threads testing in parallel(check task/tester.go)
 - [x] support multi-threads latency testing in parallel
-- [ ] support choose country in interactive mode(Now support only CN)
+- [x] support choose country in interactive mode(Default mirror is TsingHua in CN)
+- [ ] interactive mode default mirror should change to the first in the choosed country
 - [ ] support conda and pip mirror testing
 - [ ] support geo-based mirrors testing to present perfect suggestion
 - [x] support passing parameters for speed testing

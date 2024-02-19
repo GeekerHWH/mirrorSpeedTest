@@ -8,31 +8,6 @@ import (
 	"strings"
 )
 
-func InputURL() []string {
-	var (
-		URLs []string
-	)
-
-	// 读取用户批量输入的镜像站URL
-	reader := bufio.NewReader(os.Stdin)
-	for {
-		input, _ := reader.ReadString('\n')
-		// 移除末尾的换行符
-		input = strings.TrimSuffix(input, "\n")
-		if input == "" {
-			break
-		}
-		URLs = append(URLs, input)
-	}
-
-	//如果没有输入则默认使用清华源
-	if len(URLs) == 0 {
-		return []string{"mirrors.tuna.tsinghua.edu.cn"}
-	}
-
-	return URLs
-}
-
 func SelectMirror(mirrorNames *[]string, mirrorURLs *[]string) ([]string, []string) {
 	// 读取用户选择的镜像站序号
 	var (
@@ -78,4 +53,29 @@ func SelectMirror(mirrorNames *[]string, mirrorURLs *[]string) ([]string, []stri
 	}
 
 	return selectNames, selectURLs
+}
+
+func InputURL() []string {
+	var (
+		URLs []string
+	)
+
+	// 读取用户批量输入的镜像站URL
+	reader := bufio.NewReader(os.Stdin)
+	for {
+		input, _ := reader.ReadString('\n')
+		// 移除末尾的换行符
+		input = strings.TrimSuffix(input, "\n")
+		if input == "" {
+			break
+		}
+		URLs = append(URLs, input)
+	}
+
+	//如果没有输入则默认使用清华源
+	if len(URLs) == 0 {
+		return []string{"mirrors.tuna.tsinghua.edu.cn"}
+	}
+
+	return URLs
 }

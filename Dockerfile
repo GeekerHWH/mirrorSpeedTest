@@ -1,5 +1,5 @@
 # 使用一个基础的镜像，可以根据你的项目需要选择合适的基础镜像
-FROM golang:1.21.5-bookworm
+FROM golang:1.22.0-bookworm
 
 # 设置工作目录
 WORKDIR /app

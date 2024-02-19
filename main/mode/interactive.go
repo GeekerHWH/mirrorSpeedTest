@@ -5,9 +5,9 @@ import (
 	"mirrorsTestTools/main/task"
 )
 
-func Interactive() {
+func Interactive(interactiveCountry string) {
 	// Use cfginput.ReadFile() to read the configuration file and convert it to a slice.
-	mirrorNames, mirrorURLs, err := task.ReadFile("urls.json", "CN")
+	mirrorNames, mirrorURLs, err := task.ReadFile("urls.json", interactiveCountry)
 	if err != nil {
 		fmt.Println(err)
 		return
